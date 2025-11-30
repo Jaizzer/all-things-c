@@ -1,9 +1,16 @@
 #include <stdio.h>
 
 int main(void) {
-    float height = 2;
-    float width = 3;
-    float length = 5;
+    float length, width, height;
+    printf("Enter the length: ");
+    scanf("%f", &length);
+
+    printf("Enter the width: ");
+    scanf("%f", &width);
+
+    printf("Enter the height: ");
+    scanf("%f", &height);
+
 
     float volume = height * width * length;
 
