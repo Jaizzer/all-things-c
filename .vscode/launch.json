@@ -1,0 +1,15 @@
+// launch.json
+{
+	"configurations": [
+		{
+			"name": "Jaizzer's C/C++ Debug Configuration",
+			"type": "lldb",
+			"request": "launch",
+			"program": "${fileDirname}/${fileBasenameNoExtension}",
+			"args": [],
+			"cwd": "${fileDirname}",
+			"preLaunchTask": "Jaizzer's C/C++ Debug Task"
+		}
+	],
+	"version": "2.0.0"
+}
