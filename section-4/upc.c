@@ -14,10 +14,33 @@ int main(void) {
     int eleventh_digit;
     int twelfth_digit;
 
+    long int input;
     printf("Enter the UPC code: ");
-    scanf("%d %d %d %d %d %d %d %d %d %d %d %d", &first_digit, &second_digit, &third_digit,
-          &fourth_digit, &fifth_digit, &sixth_digit, &seventh_digit, &eight_digit, &ninth_digit,
-          &tenth_digit, &eleventh_digit, &twelfth_digit);
+    scanf("%ld", &input);
+
+    first_digit = input / 100000000000;
+    input %= 100000000000;
+    second_digit = input / 10000000000;
+    input %= 10000000000;
+    third_digit = input / 1000000000;
+    input %= 1000000000;
+    fourth_digit = input / 100000000;
+    input %= 100000000;
+    fifth_digit = input / 10000000;
+    input %= 10000000;
+    sixth_digit = input / 1000000;
+    input %= 1000000;
+    seventh_digit = input / 100000;
+    input %= 100000;
+    eight_digit = input / 10000;
+    input %= 10000;
+    ninth_digit = input / 1000;
+    input %= 1000;
+    tenth_digit = input / 100;
+    input %= 100;
+    eleventh_digit = input / 10;
+    input %= 10;
+    twelfth_digit = input / 1;
 
     int first_sum =
         first_digit + third_digit + fifth_digit + seventh_digit + ninth_digit + eleventh_digit;
