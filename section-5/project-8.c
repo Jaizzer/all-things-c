@@ -13,6 +13,7 @@ typedef struct {
 } Flight;
 
 int main(void) {
+    // Ask the user for the input
     int input_hour;
     int input_minute;
     printf("Enter a 24-hour time: ");
