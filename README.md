@@ -1,3 +1,3 @@
 # C
 
- All things C.
+All things C.
