@@ -1,3 +1,3 @@
-# C Journey
+# C
 
-## Follow my journey as I learn C. 🏔️
+ All things C.
