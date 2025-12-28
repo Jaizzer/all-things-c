@@ -42,7 +42,6 @@ int main(void) {
         }
     }
 
-done:
-    printf("You have exited the program.\n");
+done: { printf("You have exited the program.\n"); }
     return 0;
 }
