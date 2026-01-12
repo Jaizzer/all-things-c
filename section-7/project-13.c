@@ -8,7 +8,7 @@ int main(void) {
     float current_word_length = 0;
     do {
         current_character = getchar();
-        if (current_character != ' ') {
+        if (current_character != ' ' && current_character != '\n') {
             current_word_length++;
         } else {
             // Count the words
@@ -24,6 +24,6 @@ int main(void) {
 
     // Calculate the average
     float average = total_letters / word_count;
-    printf("Average word length: %0.2f\n", average);
+    printf("Average word length: %0.1f\n", average);
     return 0;
 }
