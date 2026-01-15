@@ -1,15 +1,17 @@
 #include <stdio.h>
 
 int main(void) {
+
+    // Start the process by adding the first term to the result
+    float result = 0;
+    char operation = '+';
+
+    // Ask the user for the expression
     float operand_a;
-    float result;
-    char operation;
-
     printf("Enter an expression: ");
-    scanf("%f", &result);
-    do {
-        scanf("%c%f", &operation, &operand_a);
+    scanf("%f", &operand_a);
 
+    for (;;) {
         switch (operation) {
         case '+':
             result += operand_a;
@@ -22,20 +24,28 @@ int main(void) {
             break;
         case '/':
             if (operand_a == 0) {
-                printf("Division by zero detected.\n");
+                printf("Error: Division by zero detected.\n");
                 return 0;
             }
             result /= operand_a;
-
             break;
-
         default:
             break;
         }
 
-    } while (operation != '\n');
+        // Get the next operation
+        scanf("%c", &operation);
 
-    printf("Value of expression: %f\n", result);
+        // Exit if the end of the expression is reached
+        if (operation == '\n') {
+            break;
+        }
+        
+        // Get the next operand
+        scanf("%f", &operand_a);
+    }
+
+    printf("Value of expression: %0.2f\n", result);
 
     return 0;
 }
