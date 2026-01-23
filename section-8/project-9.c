@@ -40,6 +40,7 @@ int main(void) {
         if (is_left_available || is_right_available || is_up_available || is_down_available) {
             for (;;) {
                 int direction_indicator = rand() % 4 + 1;
+            
                 if (direction_indicator == 1 && is_left_available) {
                     current_column_index -= 1;
                     break;
@@ -64,9 +65,9 @@ int main(void) {
     // Print the grid
     for (int i = 0; i < 10; i++) {
         for (int j = 0; j < 10; j++) {
-            printf("%c", !(grid[i][j] >= 'A' && grid[i][j] <= 'Z') ? '*' : grid[i][j]);
+            printf("%c  ", !(grid[i][j] >= 'A' && grid[i][j] <= 'Z') ? '*' : grid[i][j]);
         }
-        printf("\n");
+        printf("\n\n\n");
     }
 
     return 0;
