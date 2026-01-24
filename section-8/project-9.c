@@ -9,7 +9,7 @@ int main(void) {
 
     // Initialize the grid
     char grid[10][10] = {0};
-
+ 
     // Initialize the first grid
     int current_row_index = rand() % 10;
     int current_column_index = rand() % 10;
