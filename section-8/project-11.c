@@ -3,13 +3,15 @@
 #include <stdio.h>
 
 int main(void) {
-    bool is_first_name_done = false;
+    // Extract the first letter of the first name to act as the initial
     char first_name_initial;
-    char lastname[20];
-    char current_character;
     printf("Enter your first and last name: ");
     scanf("%c", &first_name_initial);
 
+    // Extract the last name
+    bool is_first_name_done = false;
+    char lastname[20];
+    char current_character;
     int i = 0;
     for (;;) {
         scanf("%c", &current_character);
@@ -26,8 +28,10 @@ int main(void) {
         }
     }
 
+    // Print the name of the user
     printf("You Entered the name: ");
     for (int i = 0; i < 20; i++) {
+        // Only print the alphabetical characters the user provided
         if (toupper(lastname[i]) >= 'A' && toupper(lastname[i]) <= 'Z')
             printf("%c", lastname[i]);
     }
