@@ -1,4 +1,3 @@
-#include <ctype.h>
 #include <stdbool.h>
 #include <stdio.h>
 
@@ -10,7 +9,7 @@ int main(void) {
 
     // Extract the last name
     bool is_first_name_done = false;
-    char lastname[20];
+    char lastname[20] = {0};
     char current_character;
     int i = 0;
     for (;;) {
@@ -31,9 +30,10 @@ int main(void) {
     // Print the name of the user
     printf("You Entered the name: ");
     for (int i = 0; i < 20; i++) {
-        // Only print the alphabetical characters the user provided
-        if (toupper(lastname[i]) >= 'A' && toupper(lastname[i]) <= 'Z')
-            printf("%c", lastname[i]);
+        if (lastname[i] == '\0') {
+            break;
+        }
+        printf("%c", lastname[i]);
     }
     printf(", %c.\n", first_name_initial);
 
