@@ -6,5 +6,7 @@ int main(void) {
            "number between 1 and 99.\nEnter size of magic square: ");
     scanf("%d", &n);
 
+    int magic_square[n][n];
+
     return 0;
 }
