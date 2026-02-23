@@ -4,6 +4,7 @@
 
 void read_hand(char hand[][2]);
 bool is_valid(char suit, char rank);
+bool is_unique(char hand[][2], char suit, char rank);
 
 int main(void) {
     char hand[NUMBER_OF_CARDS][2] = {0};
@@ -12,14 +13,20 @@ int main(void) {
 }
 
 void read_hand(char hand[][2]) {
+    char suit;
+    char rank;
     for (int i = 0; i < NUMBER_OF_CARDS; i++) {
         while (true) {
             printf("Enter a card: ");
-            scanf(" %c%c", &hand[i][0], &hand[i][1]);
-            if (is_valid(hand[i][0], hand[i][1])) {
-                break;
-            } else {
+            scanf(" %c%c", &suit, &rank);
+            if (!is_valid(suit, rank)) {
                 printf("Invalid Card.\n");
+            } else if (!is_unique(hand, suit, rank)) {
+                printf("Card already drawn.\n");
+            } else {
+                hand[i][0] = suit;
+                hand[i][1] = rank;
+                break;
             }
         }
     }
@@ -36,5 +43,14 @@ bool is_valid(char suit, char rank) {
         return false;
     }
 
+    return true;
+}
+
+bool is_unique(char hand[][2], char suit, char rank) {
+    for (int i = 0; i < NUMBER_OF_CARDS; i++) {
+        if (hand[i][0] == suit && hand[i][1] == rank) {
+            return false;
+        }
+    }
     return true;
 }
