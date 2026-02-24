@@ -5,10 +5,16 @@
 void read_hand(char hand[][2]);
 bool is_valid(char suit, char rank);
 bool is_unique(char hand[][2], char suit, char rank);
+bool is_flush(char hand[][2]);
 
 int main(void) {
     char hand[NUMBER_OF_CARDS][2] = {0};
     read_hand(hand);
+
+    if (is_flush(hand)) {
+        printf("Flush\n");
+    }
+
     return 0;
 }
 
@@ -49,6 +55,15 @@ bool is_valid(char suit, char rank) {
 bool is_unique(char hand[][2], char suit, char rank) {
     for (int i = 0; i < NUMBER_OF_CARDS; i++) {
         if (hand[i][0] == suit && hand[i][1] == rank) {
+            return false;
+        }
+    }
+    return true;
+}
+
+bool is_flush(char hand[][2]) {
+    for (int i = 1; i < NUMBER_OF_CARDS; i++) {
+        if (hand[i][0] != hand[i - 1][0]) {
             return false;
         }
     }
